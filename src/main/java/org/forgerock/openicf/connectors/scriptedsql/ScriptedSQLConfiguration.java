@@ -31,6 +31,7 @@ import org.identityconnectors.common.StringUtil;
 import org.identityconnectors.common.logging.Log;
 import org.identityconnectors.common.security.GuardedString;
 import org.identityconnectors.dbcommon.JNDIUtil;
+import org.identityconnectors.framework.spi.ConfigurationClass;
 import org.identityconnectors.framework.spi.ConfigurationProperty;
 
 /**
@@ -40,6 +41,9 @@ import org.identityconnectors.framework.spi.ConfigurationProperty;
  * @author Gael Allioux <gael.allioux@forgerock.com>
  * 
  */
+@ConfigurationClass(
+        skipUnsupported = true
+)
 public class ScriptedSQLConfiguration extends ScriptedConfiguration {
 
     /**
@@ -194,7 +198,7 @@ public class ScriptedSQLConfiguration extends ScriptedConfiguration {
      * The Driver class. The jdbcDriver is located by connector framework to
      * connect to database. Required configuration property, and should be
      * validated. 
-     * Oracle: oracle.jdbc.driver.OracleDriver 
+     * Oracle: oracle.jdbc.driver.OracleDriver
      * MySQL: com.mysql.jdbc.Driver db2: COM.ibm.db2.jdbc.net.DB2Driver 
      * MSSQL: com.microsoft.sqlserver.jdbc.SQLServerDriver 
      * Sybase: com.sybase.jdbc2.jdbc.SybDriver 
@@ -462,10 +466,6 @@ public class ScriptedSQLConfiguration extends ScriptedConfiguration {
             // determine if you can get a connection to the database..
             if (getUser() == null) {
                 throw new IllegalArgumentException(getMessage("MSG_USER_BLANK"));
-            }
-            // check that there is a pwd to query..
-            if (getPassword() == null) {
-                throw new IllegalArgumentException(getMessage("MSG_PASSWORD_BLANK"));
             }
             // host required
             if (getJdbcUrlTemplate().contains("%h")) {
