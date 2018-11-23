@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import groovy.sql.Sql;
-import groovy.sql.DataSet;
+
+import groovy.sql.Sql
+import org.identityconnectors.common.logging.Log
+
+import java.sql.Connection
 
 // Parameters:
 // The connector sends the following:
 // connection: handler to the SQL connection
 // action: a string describing the action ("TEST" here)
 // log: a handler to the Log facility
+def log = log as Log
+def connection = connection as Connection
 
-log.info("Entering "+action+" Script");
+log.info("Entering " + operation + " Script");
 def sql = new Sql(connection);
 
-sql.eachRow("select * from Users", { println it.id} );
-
-
+sql.eachRow("select * from INFORMATION_SCHEMA.TABLES", { println it });

@@ -1,7 +1,5 @@
 package com.evolveum.polygon.connector.scripted.sql;
 
-import org.forgerock.openicf.connectors.scriptedsql.ScriptedSQLConfiguration;
-import org.forgerock.openicf.connectors.scriptedsql.ScriptedSQLConnector;
 import org.h2.Driver;
 import org.identityconnectors.framework.api.APIConfiguration;
 import org.identityconnectors.framework.api.ConnectorFacade;
@@ -35,15 +33,15 @@ public class InitializationTest {
 		con.validate();
 
 		con.schema();
-
+		con.test();
 	}
 
 	private ScriptedSQLConfiguration createConfiguration() {
 		ScriptedSQLConfiguration config = new ScriptedSQLConfiguration();
-		config.setDatabase("testdb");
-		config.setJdbcUrlTemplate("jdbc:h2:mem:%d");
-		config.setUser("sa");
-		config.setJdbcDriver("org.h2.Driver");
+
+		config.setUrl("jdbc:h2:mem:testdb");
+		config.setUsername("sa");
+		config.setDriverClassName("org.h2.Driver");
 
 		File scripts = new File("./src/test/resources/scripts");
 		config.setScriptRoots(new String[]{scripts.getAbsolutePath()});
@@ -58,17 +56,10 @@ public class InitializationTest {
 		config.setSyncScriptFileName("SyncScript.groovy");
 		config.setSchemaScriptFileName("SchemaScript.groovy");
 
-		config.setEnableEmptyString(true);
-		config.setRethrowAllSQLExceptions(true);
-		config.setNativeTimestamps(false);
-		config.setAllNative(false);
-
 		config.setClasspath(new String[]{"."});
 
-//		config.setCustomizerScriptFileName();
 		config.setCustomConfiguration("MyexampleConfiguration");
 		config.setScriptBaseClass("BaseScript");
-//		config.setScriptExtensions();
 
 		return config;
 	}

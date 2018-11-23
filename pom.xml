@@ -42,7 +42,7 @@
     <properties>
         <project.source.version>1.8</project.source.version>
 
-        <connectorPackage>org.forgerock.openicf.connectors.scriptedsql</connectorPackage>
+        <connectorPackage>com.evolveum.polygon.connector.scripted.sql</connectorPackage>
         <connectorClass>ScriptedSQLConnector</connectorClass>
 
         <groovy.version>2.4.14</groovy.version>
@@ -76,6 +76,12 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>${groovy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <!--version>8.0.11</version-->
+            <version>7.0.53</version>
         </dependency>
 
         <!-- TEST -->
