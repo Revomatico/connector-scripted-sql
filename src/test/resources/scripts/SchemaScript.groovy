@@ -43,6 +43,8 @@ import org.identityconnectors.framework.spi.operations.SearchOp
 import org.identityconnectors.framework.spi.operations.SyncOp
 import org.identityconnectors.framework.spi.operations.TestOp
 
+import java.time.ZonedDateTime
+
 import static org.identityconnectors.framework.common.objects.AttributeInfo.Flags.MULTIVALUED
 import static org.identityconnectors.framework.common.objects.AttributeInfo.Flags.NOT_CREATABLE
 import static org.identityconnectors.framework.common.objects.AttributeInfo.Flags.NOT_READABLE
@@ -65,6 +67,7 @@ builder.schema({
         attribute 'groups', String.class, EnumSet.of(MULTIVALUED)
         attributes {
             userName String.class, REQUIRED
+            someDate ZonedDateTime.class
             email REQUIRED, MULTIVALUED
             __ENABLE__ Boolean.class
             createDate NOT_CREATABLE, NOT_UPDATEABLE
