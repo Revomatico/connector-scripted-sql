@@ -39,9 +39,9 @@ public class InitializationTest {
 	private ScriptedSQLConfiguration createConfiguration() {
 		ScriptedSQLConfiguration config = new ScriptedSQLConfiguration();
 
-		config.setUrl("jdbc:h2:mem:testdb");
-		config.setUsername("sa");
-		config.setDriverClassName("org.h2.Driver");
+		config.setJdbcUrlTemplate("jdbc:h2:mem:testdb");
+		config.setUser("sa");
+		config.setJdbcDriver("org.h2.Driver");
 
 		File scripts = new File("./src/test/resources/scripts");
 		config.setScriptRoots(new String[]{scripts.getAbsolutePath()});

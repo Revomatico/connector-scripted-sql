@@ -46,9 +46,8 @@
         <connectorClass>ScriptedSQLConnector</connectorClass>
 
         <groovy.version>2.4.14</groovy.version>
-        <dbcommon.version>2.0</dbcommon.version>
-        <connector.groovy.version>2.0</connector.groovy.version>
-        <tomcat.jdbc.version>7.0.53</tomcat.jdbc.version>
+        <dbcommon.version>2.1-SNAPSHOT</dbcommon.version>
+        <connector.groovy.version>2.1-SNAPSHOT</connector.groovy.version>
         <h2.version>1.4.197</h2.version>
     </properties>
 
@@ -95,17 +94,13 @@
             <version>${groovy.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jdbc</artifactId>
-            <version>${tomcat.jdbc.version}</version>
-        </dependency>
 
         <!-- TEST -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${h2.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
