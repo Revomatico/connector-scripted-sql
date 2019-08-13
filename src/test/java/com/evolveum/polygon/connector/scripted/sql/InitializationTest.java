@@ -26,6 +26,7 @@ public class InitializationTest {
 	}
 
 	@Test
+	@org.junit.jupiter.api.Test
 	public void initializationTest() {
 		ConnectorFacade con = setupConnector();
 		AssertJUnit.assertNotNull(con);
