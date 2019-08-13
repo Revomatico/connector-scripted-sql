@@ -3,6 +3,7 @@ Scripted SQL Connector
 
 Doc: https://wiki.evolveum.com/display/midPoint/ScriptedSQL+Connector
 
+
 # Configuration
 
 ## Usage
@@ -10,12 +11,13 @@ Doc: https://wiki.evolveum.com/display/midPoint/ScriptedSQL+Connector
 ### Maven
 
 #### Dependency
+See released versions at https://bintray.com/beta/#/raisercostin/maven/connector-scripted-sql
 
 ```
 <dependency>
-  <groupId>org.raisercostin</groupId>
-  <artifactId>jedio</artifactId>
-  <version>0.1</version>
+  <groupId>com.evolveum.polygon</groupId>
+  <artifactId>connector-scripted-sql</artifactId>
+  <version>2.1-revomatico</version>
 </dependency>
 ```
 
