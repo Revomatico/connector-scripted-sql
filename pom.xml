@@ -5,8 +5,7 @@
   governing permission and limitations under the License. When distributing Covered Code, include this CDDL Header Notice in each file and include 
   the License file at http://forgerock.org/license/CDDLv1.0.html If applicable, add the following below the CDDL Header, with the fields enclosed 
   by brackets [] replaced by your own identifying information: "Portions Copyrighted [year] [name of copyright owner]" -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -14,10 +13,10 @@
     <groupId>com.evolveum.polygon</groupId>
     <artifactId>connector-parent</artifactId>
     <version>3.0.1</version>
-    <relativePath></relativePath>
+    <relativePath />
   </parent>
   <artifactId>connector-scripted-sql</artifactId>
-  <version>2.1-revomatico-SNAPSHOT</version>
+  <version>2.1-revomatico</version>
   <packaging>jar</packaging>
   <description>Scripted SQL Connector
 
@@ -31,7 +30,7 @@
     <connection>scm:git:${git.url}.git</connection>
     <developerConnection>scm:git:${git.url}.git</developerConnection>
     <url>${git.url}</url>
-    <tag>${project.artifactId}-${project.version}</tag>
+    <tag>connector-scripted-sql-2.1-revomatico</tag>
   </scm>
   <distributionManagement>
     <repository>
