@@ -1,4 +1,6 @@
 # connector-scripted-sql
+[![Download](https://api.bintray.com/packages/raisercostin/maven/connector-scripted-sql/images/download.svg)](https://bintray.com/raisercostin/maven/connector-scripted-sql/_latestVersion)
+
 Scripted SQL Connector
 
 Doc: https://wiki.evolveum.com/display/midPoint/ScriptedSQL+Connector
